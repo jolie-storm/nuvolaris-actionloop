@@ -1,0 +1,148 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Debug Jolie (with input program)",
+			"request": "launch",
+			"mainClass": "jolie.Jolie",
+			"projectName": "jolie-cli",
+			"cwd": "${workspaceFolder}/test",
+			"args": [
+				"-l",
+				"./lib/*:${workspaceFolder}/dist/jolie/lib:${workspaceFolder}/dist/jolie/javaServices/*:${workspaceFolder}/dist/jolie/extensions/*",
+				"-i",
+				"${workspaceFolder}/include",
+				"-p",
+				"${workspaceFolder}/packages",
+				"${input:trace}",
+				"${input:programName}"
+			],
+			"windows": {
+				"args": [
+					"-l",
+					".\\lib\\*;${workspaceFolder}\\dist\\jolie\\lib;${workspaceFolder}\\dist\\jolie\\javaServices\\*;${workspaceFolder}\\dist\\jolie\\extensions/*",
+					"-i",
+					"${workspaceFolder}\\include",
+					"-p",
+					"${workspaceFolder}\\packages",
+					"${input:trace}",
+					"${input:programName}"
+				]
+			}
+		},
+		{
+			"type": "java",
+			"name": "Tests - All",
+			"request": "launch",
+			"mainClass": "jolie.Jolie",
+			"projectName": "jolie-cli",
+			"cwd": "${workspaceFolder}/test",
+			"args": [
+				"-l",
+				"./lib/*:${workspaceFolder}/dist/jolie/lib:${workspaceFolder}/dist/jolie/javaServices/*:${workspaceFolder}/dist/jolie/extensions/*",
+				"-i",
+				"${workspaceFolder}/include",
+				"-p",
+				"${workspaceFolder}/packages",
+				"test.ol"
+			],
+			"windows": {
+				"args": [
+					"-l",
+					".\\lib\\*;${workspaceFolder}\\dist\\jolie\\lib;${workspaceFolder}\\dist\\jolie\\javaServices\\*;${workspaceFolder}\\dist\\jolie\\extensions/*",
+					"-i",
+					"${workspaceFolder}\\include",
+					"-p",
+					"${workspaceFolder}\\packages",
+					"test.ol"
+				]
+			}
+		},
+		{
+			"type": "java",
+			"name": "Tests - Custom Test",
+			"request": "launch",
+			"mainClass": "jolie.Jolie",
+			"projectName": "jolie-cli",
+			"cwd": "${workspaceFolder}/test",
+			"args": [
+				"-l",
+				"./lib/*:${workspaceFolder}/dist/jolie/lib:${workspaceFolder}/dist/jolie/javaServices/*:${workspaceFolder}/dist/jolie/extensions/*",
+				"-i",
+				"${workspaceFolder}/include",
+				"-p",
+				"${workspaceFolder}/packages",
+				"${input:trace}",
+				"test.ol",
+				"${input:testName}"
+			],
+			"windows": {
+				"args": [
+					"-l",
+					".\\lib\\*;${workspaceFolder}\\dist\\jolie\\lib;${workspaceFolder}\\dist\\jolie\\javaServices\\*;${workspaceFolder}\\dist\\jolie\\extensions/*",
+					"-i",
+					"${workspaceFolder}\\include",
+					"-p",
+					"${workspaceFolder}\\packages",
+					"${input:trace}",
+					"test.ol",
+					"${input:programName}"
+				]
+			}
+		},
+		{
+			"type": "java",
+			"name": "Tests - HTTP GET",
+			"request": "launch",
+			"mainClass": "jolie.Jolie",
+			"projectName": "jolie-cli",
+			"cwd": "${workspaceFolder}/test",
+			"args": [
+				"-l",
+				"./lib/*:${workspaceFolder}/dist/jolie/lib:${workspaceFolder}/dist/jolie/javaServices/*:${workspaceFolder}/dist/jolie/extensions/*",
+				"-i",
+				"${workspaceFolder}/include",
+				"-p",
+				"${workspaceFolder}\\packages",
+				"test.ol",
+				".*http_get.*"
+			],
+			"windows": {
+				"args": [
+					"-l",
+					".\\lib\\*;${workspaceFolder}\\dist\\jolie\\lib;${workspaceFolder}\\dist\\jolie\\javaServices\\*;${workspaceFolder}\\dist\\jolie\\extensions/*",
+					"-i",
+					"${workspaceFolder}\\include",
+					"-p",
+					"${workspaceFolder}\\packages",
+					"${input:trace}",
+					"test.ol",
+					".*http_get.*"
+				]
+			}
+		},
+	],
+	"inputs": [
+		{
+			"id": "programName",
+			"type": "promptString",
+			"description": "The filename of the Jolie program to be launched"
+		},
+		{
+			"id": "testName",
+			"type": "promptString",
+			"description": "The name of the test to be launched"
+		},
+		{
+			"type": "pickString",
+			"id": "trace",
+			"description": "Run with --trace?",
+			"options": [
+				"",
+				"--trace",
+			],
+			"default": ""
+		}
+	]
+}

@@ -1,0 +1,30 @@
+{
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"postCreateCommand": "./.devcontainer/container-setup.sh",
+	"containerUser": "jolie",
+	"features": {
+		"node": {
+			"version": "lts"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vscjava.vscode-java-pack",
+				"redhat.fabric8-analytics",
+				"jolie.vscode-jolie",
+				"redhat.vscode-xml",
+				"cschleiden.vscode-github-actions",
+				"GitHub.vscode-pull-request-github",
+				"eamodio.gitlens",
+				"ms-azuretools.vscode-docker",
+				"christian-kohler.path-intellisense",
+				"redhat.vscode-yaml",
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"cracrayol.java-pmd"
+			]
+		}
+	}
+}

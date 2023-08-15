@@ -1,0 +1,17 @@
+**/dist/
+**/build/
+**/target/
+**/.classpath
+**/.settings/
+**/.project
+**/.idea/modules.xml
+**/.idea/libraries
+**/.idea/workspace.xml
+**/.idea/usage.statistics.xml
+**/.idea/tasks.xml
+**/.idea/shelf
+**/*.iml
+test/extensions/private/WS-test.jar
+test/extensions/private/WS-test/lib/
+.vscode/tasks.json
+release-tools/release
